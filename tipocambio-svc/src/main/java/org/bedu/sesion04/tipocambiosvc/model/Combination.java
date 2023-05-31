@@ -1,10 +1,8 @@
-package org.bedu.sesion04.tipocambio.model;
+package org.bedu.sesion04.tipocambiosvc.model;
 
 
 
 public class Combination {
-
-    private String id;
 
 
     private String name;
@@ -16,13 +14,6 @@ public class Combination {
         this.value = values;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

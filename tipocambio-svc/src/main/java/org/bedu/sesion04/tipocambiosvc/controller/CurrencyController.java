@@ -1,7 +1,8 @@
-package org.bedu.sesion04.tipocambio.controller;
+package org.bedu.sesion04.tipocambiosvc.controller;
 
-import org.bedu.sesion04.tipocambio.model.Currency;
-import org.bedu.sesion04.tipocambio.service.CurrencyService;
+
+import org.bedu.sesion04.tipocambiosvc.model.Combination;
+import org.bedu.sesion04.tipocambiosvc.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 public class CurrencyController {
@@ -20,16 +23,15 @@ public class CurrencyController {
         this.currencyService = currencyService;
     }
 
-//    @GetMapping("/currencies")
-//    public List<Currency> getCurrencies(){
-//
-//        return currencyService.getAll().get("MXN");
-//    }
+    @GetMapping("/currencies")
+    public Set getCurrencies(){
+        return currencyService.getAllCurrencies();
+    }
 
     @GetMapping("/currencies/{name}")
-    public ResponseEntity<String> getCurrencies(@PathVariable("name") String name){
-
-        return (ResponseEntity<String>) currencyService.getAll().get(name);
-
+    public List<Combination> getCurrencyExchanges(@PathVariable("name") String name){
+        return  currencyService.getAll().get(name).stream().collect(Collectors.toList());
     }
+
+
 }
