@@ -5,7 +5,6 @@ import org.bedu.sesion04.tipocambiosvc.model.Combination;
 import org.bedu.sesion04.tipocambiosvc.model.Currency;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -22,8 +21,8 @@ public class CurrencyDAO {
 //    1 usd son 0.93
 //    1 eu son 1.07
 
-   public Map<String , List<Combination>> getAll(){
-       return Currency.getExchange();
+   public Map<String , List<Combination>> getAllExchanges(){
+       return Currency.getExchanges();
    }
 
    public Set getAllCurrencies(){return Currency.getCurrencies();}

@@ -23,7 +23,7 @@ public class Currency {
         return currencies;
     }
 
-    public static Map<String, List<Combination>> getExchange() {
+    public static Map<String, List<Combination>> getExchanges() {
         return exchanges;
     }
 

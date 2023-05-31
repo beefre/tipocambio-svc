@@ -20,8 +20,8 @@ public class CurrencyService {
         this.currencyDAO = currencyDAO;
     }
 
-    public Map<String , List<Combination>> getAll(){
-        return currencyDAO.getAll();
+    public Map<String , List<Combination>> getAllExchanges(){
+        return currencyDAO.getAllExchanges();
     }
 
     public Set getAllCurrencies(){return currencyDAO.getAllCurrencies();}

@@ -30,7 +30,7 @@ public class CurrencyController {
 
     @GetMapping("/currencies/{name}")
     public List<Combination> getCurrencyExchanges(@PathVariable("name") String name){
-        return  currencyService.getAll().get(name).stream().collect(Collectors.toList());
+        return  currencyService.getAllExchanges().get(name).stream().collect(Collectors.toList());
     }
 
 
