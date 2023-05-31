@@ -6,10 +6,10 @@ public class Combination {
 
 
     private String name;
-    private String value;
+    private Double value;
 
 
-    public Combination(String name, String values) {
+    public Combination(String name, Double values) {
         this.name = name;
         this.value = values;
     }
@@ -23,11 +23,11 @@ public class Combination {
         this.name = name;
     }
 
-    public String getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 }

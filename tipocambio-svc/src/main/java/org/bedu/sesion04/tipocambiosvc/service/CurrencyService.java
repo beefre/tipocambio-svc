@@ -25,4 +25,8 @@ public class CurrencyService {
     }
 
     public Set getAllCurrencies(){return currencyDAO.getAllCurrencies();}
+
+    public List<Combination> getExchangeByName(String name, Double money) {
+        return currencyDAO.getExchangeByName(name,money);
+    }
 }

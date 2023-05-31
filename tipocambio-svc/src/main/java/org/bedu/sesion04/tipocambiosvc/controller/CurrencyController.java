@@ -33,5 +33,10 @@ public class CurrencyController {
         return  currencyService.getAllExchanges().get(name).stream().collect(Collectors.toList());
     }
 
+    @GetMapping("/currencies/{name}/exchanges/{money}")
+    public List<Combination> getExchange(@PathVariable("name") String name, @PathVariable("money") Double money){
+        return currencyService.getExchangeByName(name,money);
+    }
+
 
 }
